@@ -30,7 +30,7 @@ function TaskManager(){
                 <div className="space-y-2 overflow-y-auto h-56">   
 
                         {tasks.map((task) =>( 
-                        <TaskItem task={"task"}
+                        <TaskItem task={task}
                          handleDelete={handleDelete}/>
                         ))}
                 </div>
