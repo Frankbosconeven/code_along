@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .form-lable{
+        @apply block text-lg text-gray-50
+    }
+
+    .form-input{
+        @apply border w-full outline-none py-1 px-2 text-lg text-gray-700
+    }
+}

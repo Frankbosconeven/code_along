@@ -3,14 +3,18 @@
 //  import { Image } from "./components/Image";
 // import NavBar from "./components/NavBar";
 // import Practice from "./components/Practice";
-import TaskManager from "./components/TaskManager";
+// import TaskManager from "./components/TaskManager";
+
+import Form from "./components/Form";
+
 
 
 
 function App() {
   return (
     <div>
-      <TaskManager/>
+      <Form/>
+      {/* <TaskManager/> */}
       {/* <Header />
       <NavBar />
       <Button lable={"Add to cart"} />
