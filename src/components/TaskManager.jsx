@@ -1,21 +1,41 @@
-import React, {useState} from "react";
-   import TaskItem from "./TaskItem";
+import React, {useState, useEffect} from "react";
+
+import {v4 as uuid } from "uuid";
+
+import TaskItem from "./TaskItem";
+   
+   
 
 function TaskManager(){
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(() => {
+        const tasks = localStorage.getItem("tasks");
+        if (!tasks) return [];
+            return JSON.parse(tasks);
+        
+    });
     const [input, setInput] = useState("");
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (input === "") return;
-        setTasks([input, ...tasks]);
-        setInput("")
-    }
 
-    const handleDelete = idx => {
-        const newTask = tasks.filter((task) => task !== idx );
-        setTasks(newTask)
+        const newTask = {
+            id: uuid(),
+            text: input,
+            completed: false,
+        };
+
+        setTasks([newTask, ...tasks]);
+        setInput("");
+    };
+
+    const handleDelete = (id) => {
+        const newTasks = tasks.filter((task) => task.id !== id);
+        setTasks(newTasks)
     }
+    useEffect(()=> {
+        localStorage.setItem("tasks", JSON.stringify(tasks))
+    }, [tasks]);
 //Map run through the items in the arrays, map retruns array but loop
     return (
         <div className="h-screen bg-blue-600 flex justify-center items-center">
@@ -30,13 +50,13 @@ function TaskManager(){
                 <div className="space-y-2 overflow-y-auto h-56">   
 
                         {tasks.map((task) =>( 
-                        <TaskItem task={task}
+                        <TaskItem key={task.id} task={task}
                          handleDelete={handleDelete}/>
-                        ))}
+                        ))};
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default TaskManager;

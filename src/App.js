@@ -3,9 +3,9 @@
 //  import { Image } from "./components/Image";
 // import NavBar from "./components/NavBar";
 // import Practice from "./components/Practice";
-// import TaskManager from "./components/TaskManager";
-
-import Form from "./components/Form";
+import React from "react";
+import TaskManager from "./components/TaskManager"
+// import Form from "./components/Form";
 
 
 
@@ -13,8 +13,9 @@ import Form from "./components/Form";
 function App() {
   return (
     <div>
-      <Form/>
-      {/* <TaskManager/> */}
+    <TaskManager />
+      {/* <Form/> */}
+      
       {/* <Header />
       <NavBar />
       <Button lable={"Add to cart"} />
@@ -26,7 +27,7 @@ function App() {
       <Button2 /> */}
       {/* <Image /> */}
     </div>
-  )
+  );
 }
 
 export default App;
