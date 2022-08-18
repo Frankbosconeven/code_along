@@ -3,8 +3,9 @@
 //  import { Image } from "./components/Image";
 // import NavBar from "./components/NavBar";
 // import Practice from "./components/Practice";
-import React from "react";
-import TaskManager from "./components/TaskManager"
+
+import ProductList from "./components/ProductList";
+// import TaskManager from "./components/TaskManager"
 // import Form from "./components/Form";
 
 
@@ -13,7 +14,8 @@ import TaskManager from "./components/TaskManager"
 function App() {
   return (
     <div>
-    <TaskManager />
+      <ProductList />
+    {/* <TaskManager /> */}
       {/* <Form/> */}
       
       {/* <Header />
