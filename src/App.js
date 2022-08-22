@@ -7,6 +7,7 @@
 import ProductList from "./components/ProductList";
 // import TaskManager from "./components/TaskManager"
 // import Form from "./components/Form";
+import Spinner from "./components/Spinner";
 
 
 
@@ -28,6 +29,7 @@ function App() {
       {/* <Button1 />
       <Button2 /> */}
       {/* <Image /> */}
+
     </div>
   );
 }
