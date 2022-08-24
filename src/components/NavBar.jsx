@@ -24,7 +24,7 @@ const links = [
   },
 ];
 
-function NavBar() {
+function Navbar() {
   return (
     <nav className="flex justify-between py-5 px-20 shadow-md">
       <h3 className="font-bold ">SEBTEC INC.</h3>
@@ -37,4 +37,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
