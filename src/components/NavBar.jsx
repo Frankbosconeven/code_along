@@ -27,7 +27,7 @@ const links = [
 function NavBar() {
   return (
     <nav className="flex justify-between py-5 px-20 shadow-md">
-      <h3 className="font-bold ">QUAKES COMPUTER HUB</h3>
+      <h3 className="font-bold ">SabTec Inc.</h3>
       <ul className="flex gap-5">
         {links.map((link, index) => (
           <NavItem key={index} label={link.label} to={link.to} />
