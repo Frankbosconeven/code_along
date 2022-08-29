@@ -1,3 +1,4 @@
+import React from "react";
 import TaskManager from "./pages/TaskManager";
 import Spinner from "./components/Spinner";
 import Product from "./components/Product";
@@ -6,15 +7,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import NotFound from "./pages/NotFound";
 import ProductDetails from "./pages/ProductDetails";
+
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <NavBar></NavBar>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductList />} />
@@ -28,4 +30,7 @@ function App() {
       {/* <Product /> */}
     </div>
     
-  )}
+  );
+}
+
+export default App;
