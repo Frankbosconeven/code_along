@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 // import { TrashIcon } from "@heroicons/react/outline"
 import TaskItem from "../components/TaskItems";
 import { v4 as uuid } from "uuid"
-import {useTaskContext} from "../context/taskContext"
+import { useTaskContext } from "../context/tasksContext";
 
 function TaskManager() {
-  const [tasks, setValue] = useTaskContext();
-  const [input, setInput] = useState("");
+  const {tasks, setValue} = useTaskContext();
+  const [input, setInput]= useState("");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +25,7 @@ function TaskManager() {
   };
   const handleDelete = (id) => {
     const newTasks = tasks.filter((task) => task.id !== id);
-    setTasks(newTasks);
+    setValue(newTasks);
   };
 
   useEffect(() => {
